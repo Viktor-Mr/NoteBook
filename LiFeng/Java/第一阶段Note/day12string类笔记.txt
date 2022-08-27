@@ -1,0 +1,127 @@
+包：
+	A.其实就是一个文件夹
+	B.
+		a.把相同类名的文件放到不同包
+		b.对业务类进行分类管理
+		
+类：
+	默认，public，final，abstract
+	我们自己定义：public居多
+成员变量：
+	四种权限修饰符均可,final,static
+	我们自己定义：private居多
+构造方法：
+	四种权限修饰符均可,其他不可
+	我们自己定义：public 居多
+成员方法：
+	四种权限修饰符均可，fianl,static,abstract
+	我们自己定义：public居多
+
+	
+学习编程和学习汉语的异同点：
+	A:学好汉语，首先必须掌握汉语的语法，学好编程，也必须先学习编程语言的基本语法，我们前面讲解的就可以认为的Java的编程语法。
+	B:学好汉语，还要掌握大量的成语，虽然不是要把所有的成语都掌握，但至少掌握的越过，描述事物时用词就会越恰当，越准确，越快捷，
+		文章也会写的越流畅。同理，学习编程语言掌握了大量的API，就像掌握的了大量的成语一样，可以让我们在处理某些问题时会轻而易举，
+		同时，我们还能够从这些API中学到大师们组织Java类的方法，划分类的技巧。
+	C:学好汉语，除了要掌握语法和成语外，还应该学会写文章的技巧和手法，比如说议论文该怎么写(风头论点明确，猪肚论据充分，豹尾论尾有力)，才能写出好的文章。同理，学习编程，也需要掌握分析和解决问题的手法，养成良好的编程风格和习惯，体会出编程的感觉。学习汉语，我们可以从大量的唐诗宋词和现代散文中去体会写文章的技巧，同时听取老师的讲解和分析。同样，学习编程，也要听取有经验的程序的分析和讲解，并从别人的优秀的程序中去找感觉和经验。
+		
+当然了，他们还是有一些区别的。
+	最大的区别及时，学习汉语是，好多东西必须先记住了，用的时候，才能有。有句成员不是说：书到用时方恨少吗。
+	但是，学习编程了，就不用这样了，可以用的时候，临时获取，现学现用，当然这是指我们有了一定的编程感觉和经验后了。
+	?
+	如何算学会呢?
+	很多人都认为我把老师的代码多敲几遍就算学会了，我就应该会做很多的东西了，但是，事实是什么呢，是我们老师讲解能听懂，
+	也能看懂很多代码，就是不会写，这是正常的现象，因为我们的内功还不够，还得继续修炼。
+	我们学习汉语，能看懂一般的文章，能写篇小文章，就算学会了，同理，学习编程也是这样的，能看懂老师，在会写老师写过的代码了，
+	然后多思考，多总结，随着时间的积累，才能真正的走向高手的水平。到那个时刻估计就是：只要给我API，你要做什么，我就能做什么。
+	以前是学好数理化，走遍天下都不怕，现在是掌握API，编程世界我不怕。
+
+Object类概述
+	Object:类层次结构的根类,所有类都直接或者间接的继承自该类
+	构造方法
+	public Object()
+	回想面向对象中为什么说：
+		子类的构造方法默认访问的是父类的无参构造方法
+	构造方法:	
+		public int hashCode()返回该对象的哈希码值。
+			支持此方法是为了提高哈希表（例如 java.util.Hashtable 提供的哈希表）的性能。
+			注意:我们的hashCode根据哈希值计算出来的一个地址值,这个值跟地址有关,但是不是实际地址 你可以理解为地址值
+			这个有没有用?老师也不知道 你用到了就有用 你没用到就用，别到时候用到了怪老师没教
+		public final Class<?>
+		 	getClass()返回此 Object 的运行时类。返回的 Class 对象是由所表示类的 static synchronized 方法锁定的对象。 
+		 
+		    getClass().getName():获取该运行时候的具体类
+			
+ 	public boolean equals(Object obj):指示其他某个对象是否与此对象“相等”。 
+
+ 
+==和equals的区别:
+ 		==:
+ 			基本数据类型:比较的就是你这个值是否相等
+ 			引用数据类型:比较的是地址值是否相等
+ 		equals:
+ 			引用类型:默认情况下比较的是地址值(字符串除外)
+ 			不过我们可以根据自己的情况，根据需求来重写equals方法。
+			//另外可以用来比较字符串的值是否相等
+
+ 	源码:
+ 		public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		return super.equals(obj);
+			}
+			
+String 类代表字符串。Java 程序中的所有字符串字面值（如 "abc" ）都作为此类的实例实现。 
+	字符串是常量；它们的值在创建之后不能更改。字符串缓冲区支持可变的字符串。因为 String 对象是不可变的，所以可以共享。
+	例如：String str = "abc";
+		public String():空构造
+		public String(String original):把字符串的常量值转换字符串对象
+
+		public String(byte[] bytes):把字节数组转换成字符串
+		public String(byte[] bytes,int offset,int length):把我们字节数组的一部分转换成字符串
+		public String(char[] value):把字符数组转换成字符串
+		public String(char[] value,int offset,int count):把我们字符数组的一部分转换成字符串
+		
+		非常常用的方法:
+		public int length();获取字符串的长度
+
+String s = new String(“hello”)和String s = “hello”;的区别?
+ 	答:
+ 		有区别,前者会创建两个对象，后者只会创建一个对象 
+		
+如果是字符串相加的话:是先开辟空间 再去拼接
+如果是字符串常量，是先拼接，然后再去常量池去寻找，如果有就直接返回 如果没有开辟空间
+
+String判断的功能:
+		判断数据(值)是否相等:
+			boolean equals(Object obj)
+		与指定对象进行比较，且不考虑大小写问题：
+			boolean equalsIgnoreCase(String str)
+		判断某个对象是否出现在String的字符串当中:
+			boolean contains(String str)
+		确定此字符串实例的开头是否与指定的字符串匹配：
+			boolean startsWith(String str)
+		确定此字符串实例的结尾是否与指定的字符串匹配
+			boolean endsWith(String str)
+		判断此字符串内容是否为空，其实就是判断length为0返回true，否则返回false
+			boolean isEmpty()
+			
+	注意:
+		String s4 = "";	      字符串内容为空
+		String s5 = null; s5的字符串对象为空
+		
+字符串获取的功能:
+ 		int length():获取字符串的长度
+		char charAt(int index):获取指定位置的字符
+		int indexOf(int ch):获取此字符串某个字符第一次出现索引位置
+			为啥是int类型,不应该是char类型吗?97
+			原因是'a' 等同于 97 
+		int indexOf(String str):返回指定子字符串在此字符串中第一次出现处的索引。
+		int indexOf(int ch,int fromIndex): 返回在此字符串中第一次出现指定字符处的索引，从指定的索引开始搜索。
+		int indexOf(String str,int fromIndex):返回指定子字符串在此字符串中第一次出现处的索引，从指定的索引开始。
+		int lastIndexOf(String str):返回指定子字符串在此字符串中最后一次出现处的索引。(从0开始查找)
+		String substring(int start):从指定位置截取字符串，默认到结尾
+		String substring(int start,int end):从指定位置开始到指定位置结束
+
+		char[] toCharArray():字符串转化为字符数组.
+	
+

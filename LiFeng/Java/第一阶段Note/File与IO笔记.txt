@@ -1,0 +1,87 @@
+我们在具体了解I/O流的时候，需要知道的硬盘是什么样的表现形式
+ 	JAVA就为我们提供了一个工具 这个工具叫做File
+
+ 	File:文件和目录(文件夹)路径名抽象表现形式
+
+ 	File类的构造方法:
+//File file=new File("c:/hello.txt");
+ 		File(String pathname):根据一个路径得到一个file对象
+//File file=new File("c:","hello.txt);
+		File(String parent, String child):根据一个目录名和一个子文件得到一个file对象
+		File(File parent, String child):根据一个父file文件和一个子文件得到一个file对象
+		
+创建的功能:
+ 		public boolean createNewFile():创建文件 如果存在这样的文件 就不创建了
+ 		public boolean mkdir()创建文件夹，如果文件存在了 就不创建了
+ 		public boolean mkdirs()创建多层文件夹 如果父文件不存在 就自动帮你创建出来
+		
+删除的功能;
+		public boolean delete():删除此抽象路径名表示的文件或目录。如果此路径名表示一个目录，则该目录必须为空才能删除。
+
+		
+判断功能:
+		public boolean isDirectory():判断是否为目录
+		public boolean isFile():判断是否为文件
+		public boolean exists():判断是否存在
+		public boolean canRead():判断是否可读
+		public boolean canWrite():判断是否可写
+		public boolean isHidden():判断是否隐藏
+
+
+获取的功能:
+  		public File getAbsoluteFile():返回文件的绝对路径
+  		public String getPath():将路径名转换成字符串
+  		public String getName():获取文件名
+  		public long length():获取文件的长度		
+		
+判断文件的后缀是否已jgp结尾。
+
+	File file = new File("test","jls.jpg");
+		System.out.println(file.createNewFile());
+		if(file.isFile()){
+			if(file.getName().endsWith(".jpg")){
+				System.out.println("这个真是橘梨纱");
+			}else {
+				System.out.println("这个不是图片");
+			}
+		}
+		
+I/O流的分类:
+ 		流向:
+ 			输入流	读取数据
+ 			输出流	写出数据
+ 		数据类型:
+ 			字节流:
+ 				字节输入流:		读取数据 	InputStream---->FileInputStream
+ 				字节输出流:		写出数据 	OutputStream---->FileOutputStream
+ 			字符流:
+ 				字符输入流:		读取数据	Reader----->FileReader
+ 				字符输出流:		写出数据	Writer----->FileWriter
+
+ 		注意:由于我们刚才瞄了一眼了API发现这玩意是抽象 所以不能直接是实例化 只能通过其子类进行实例化
+ 			一般我们在探讨IO流的时候，其实没有明确的按照哪种分类来做 默认情况下是按数据类型类分的
+
+ 		需求:我要在一个文本中写一段文字"我很爱龙哥"。
+
+ 		分析:
+ 			A.这种操作和是一个一个字符组成的，那么我们就可以使用字符流来做，有的同学说用字节流 也可以，因为我们的字符是在字节之后出现的
+ 			B.由于我是在文本当中写出一句话 所以我们使用的是输出流
+
+ 		通过上面的分析，所以我们需要用什么？
+ 			OutputStream
+ 			但是OutputStream不能被实例，所以要找他的子类FileOutputStream
+ 		注意:我们是不是发现他有很多很多的子类，我怎么可能记得住
+ 			记住，每种流的命名都是以其基类的名字做为后缀
+ 				xxxOutputStream
+ 				xxxInputStream
+ 				xxxReader
+ 				xxxWriter
+
+ 		我们看了下构造方法:
+ 			FileOutputStream(File file) 
+ 			FileOutputStream(String name) 
+
+ 		字节流操作的基本步骤:
+ 			a.创建一个字节输出流的对象
+ 			b.写数据
+ 			c.释放资源

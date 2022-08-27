@@ -1,0 +1,10 @@
+
+程序在编译和运行时出现的另一类错误称之为异常，它是 JVM 通知程序员的一种方式。
+通过这种方式，让程序员知道已经或可能出现错误，要求程序员对其进行处理。
+异常分为运行时异常与受查异常。
+运行时异常，是 RuntimeException 类或其子类  ，即只有在运行时才出现的异常。如，
+NullPointerException、ArrayIndexOutOfBoundsException、IllegalArgumentException  等均属于运行时异常。这些异常由 JVM 抛出，在编译时不要求必须处理（捕获或抛出）。但，只要代码编写足够仔细，程序足够健壮，运行时异常是可以避免的。 
+注意，Hibernate 异常 HibernateException 就属于运行时异常。
+受查异常，也叫编译时异常，即在代码编写时要求必须捕获或抛出的异常，若不处理，
+则无法通过编译。如 SQLException，ClassNotFoundException，IOException 等都属于受查异常。 
+RuntimeException 及其子类以外的异常，均属于受查异常。当然，用户自定义的 Exception的子类，即用户自定义的异常也属受查异常。程序员在定义异常时，只要未明确声明定义的为 RuntimeException 的子类，那么定义的就是受查异常。 

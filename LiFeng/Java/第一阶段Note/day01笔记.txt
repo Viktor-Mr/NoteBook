@@ -1,0 +1,210 @@
+第一个阶段:
+	JAVASE - 常量、变量、数据类型、集合、泛型、反射、线程、网络编程、I/O.....
+第二个阶段:
+	JAVAEE -  b/s,JSP、MySql、Oracle....
+第三个阶段:
+	Hibernate/Struts/Spring SSH/SSM 
+
+1.计算机概述
+	1)计算机
+	2)计算机硬件
+	3)计算机软件
+		系统软件:windows、linux、ios
+		应用软件：QQ、微信、快播
+2.软件开发
+	软件：一组数据和指令的集合
+	开发：就是制作软件的过程
+	如何实现软件开发？
+		利用编程语言和一些工具完成开发
+3.语言
+	自然语言:
+		就是人与人之间沟通的语言
+	计算机语言：
+		人与计算机交流语言
+		一般使用java、c++、c#...
+4.人机交互
+	图形化界面
+	命令行界面
+
+5.键盘的功能键
+	Ctrl+A	全选
+	Ctrl+C	复制
+	Ctrl+V	粘贴
+	Ctrl+X	剪切
+	Ctrl+Z	撤销
+	Ctrl+S	保存
+	Win+R	运行
+	Win+D	返回桌面
+	Win+E	打开计算机
+	
+6.DOS命令行的基本命令:
+		如何进入DOS窗口:
+			Win+R --> 输入cmd
+		盘符的切换 
+					d: 回车
+		目录的进入
+					cd javase
+					cd javase\demo\day01
+		查看目录文件
+					dir
+		删除目录
+					rd javase
+		删除文件	
+					del 文件名 / *.txt
+		回退目录:
+					cd..
+					cd\
+		查看ip：	
+					ipconfig/all
+		查看系统信息
+					systeminfo
+		查看网络是否连通	
+					ping 127.0.0.1
+					
+7.JAVA的语言概述：
+		java发展史:詹姆斯·高斯林（James Gosling）
+		JDK：
+			1.2具备行业影响，在这个版本宣布JAVA分为3个版本
+			1.5具备技术上革新，退出泛型、自动装箱、自动拆箱等等
+			
+8.JAVA语言的特点:
+		众多小特点，主要记住开源、跨平台、面向对象.....
+		
+9.JVM/JDK/JRE的区别和关联
+	1.作用
+		Jvm:保证了跨平台性
+		
+		Jre:保证运行环境
+
+		Jdk:保证开发环境
+	2.关系
+		JRE里面包含了JVM+类库
+
+		JDK包含了JRE+开发工具
+		
+		JDK主要提供开发工具
+
+ 
+	
+JDK  = JRE  + 开发工具集 （例如javac编译工具等）
+JRE = JVM + javaSE标准类库
+         bin      lin	
+		
+10.JDK的下载跟安装
+	下载:
+		去官网下载
+		去百度下载
+		直接问我要
+	安装:
+		绿色版，直接解压就可以了
+		安装版，直接下一步 下一步 下一步 .....
+	注意：
+		尽量避免有中文字符的目录和特殊符号和空格的目录
+	卸载:
+		绿色版:直接删除目录
+		安装版:找到控制面板的卸载就可以了
+	
+10.JDK目录分析:
+	 bin:提供了JDK的开发工具和一些需要执行的文件
+	 lib:就是为我们的jar包提供归档
+	 include:保留了C语言的头部文件，主要用于链接java程序和调试程序使用
+	 jre：主要负责java程序运行的一些工作
+------
+	JDK/bin/javac.exe
+		该文件负责编译java文件
+	JDK/jre/java.exe
+		该文件负责执行.class文件
+		
+11.JAVA环境变量的配置:
+		我的电脑-->右键-->属性-->高级系统设置-->环境变量-->系统变量
+		1.新建JAVA_HOME
+			JAVA_HOME = C:\Program Files\Java\jdk1.7.0_80
+			
+		2.添加path路径
+			%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;
+			
+		保证javac命令可以到任意目录运行
+
+
+
+	
+JDK的配置:
+	第一步:JAVA_HOME
+	值:C:\Program Files\Java\jdk1.7.0_80      jdk的根目录
+	
+	我们需要的文件的具体路径1:C:\Program Files\Java\jdk1.7.0_80 jdk\bin\javac.exe -- 将JAVA程序编译成字节码文件(.class)
+	我们需要的文件的具体路径2:C:\Program Files\Java\jdk1.7.0_80 jdk\jre\bin\java.exe -- 负责运行我们的.class文件
+	
+	PATH:
+		%JAVA_HOME%\bin
+		%JAVA_HOME%\jre\bin
+		
+
+JAVA程序的开发流程:
+	1.进行JAVA程序的编码
+	2.通过我们的javac.exe，将JAVA的源文件编译成.class文件(字节码文件)
+		格式:javac HelloWorld.java(必须要写上后缀)
+	3.通过java.exe来运行我们的.class文件
+		格式:java HelloWorld(千万不要写上后缀)
+
+常见问题:
+	1.主类无法加载
+		一般来说，直接检查你的main方法就可以了，99.9%是这个问题
+	2.类名和java文件不一致
+		这个可以不一致，但是我要求你们必须一致
+	3.见到非法字符:\65307
+		肯定是你的代码当中出现了中文字符
+	4.括号配对的问题
+		一定要注意，您的所有括号都是成对出现的 不要少
+	5.无法修改拓展名
+		工具->文件夹选项->查看->隐藏已知文件扩展名 
+
+12.第一个java程序
+需求：我准备写一个java程序，然后把"Hello World!!!"这句话打印出来。
+	分析:
+		A.要写java程序就必须先定义一个类
+		B.为了能够把数据输出出来，就说明你的java程序需要运行，那么就必须写上main方法
+			格式：public static void main(String[] args){..}
+		C.如果需要输出，就必须需要输出语句
+			格式：System.out.println();
+	实现:
+		1.java提供了一个关键字，这个关键字叫做class,用于定义类
+		2.main方法的格式是固定，对着老师的抄就可以了
+		3.输出语句也是固定的，对着老师的抄就可以了
+
+
+程序解释(重要):
+	class HelloWorld{
+		public static void main(String [] args){
+			System.out.println("Hello World");
+		}
+	}
+	1.java中最基本的单位是类，所以说 我们需要写一个java程序就必须先定义一个类
+		格式:class 类名
+		举例:class HelloWorld
+	2.我们所有的代码全部是写在大括号里面
+	3.java程序想要执行，必须要有main方法(主函数)
+		格式：public static void main(String [] args){...}
+	4.如果我们需要输出一段文字或者什么的东西，目前来说 就必须写上输出语句
+		格式:System.out.println("要输出的内容");
+		注意:输出语句里面的内容是可以随意改变了，也不限制次数
+		
+
+13.格式化输出
+	System.out.println("我有换行的效果");
+	System.out.print("我没有有换行的效果");
+        转义字符:
+	\n 代表换行的意思
+	\t 相当于你键盘的tab键
+        System.out.print("我也有换行的效果啦\n");
+	System.out.println("姓名:张三");
+	System.out.println("姓名:\t张三");
+	System.out.println("年龄:\t18");
+
+
+
+
+
+        
+
+	

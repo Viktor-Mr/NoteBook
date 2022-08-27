@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/day16-20/src/day16/Io流/FileCope.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/day16-20/src/day16/Io流/IoInputUse.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/day16-20/src/day16/Io流/编码与解码.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/day16-20/src/day16/enumtest/Dome.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/day16-20/src/day17/字符流/WriterUseTest.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/day16-20/src/day17/对象流/Person.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/day16-20/src/day17/对象流/对象输入流.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/day16-20/src/day17/对象流/对象输出流.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/day16-20/src/day17/对象流/运用集合/ObjectInputStreamDemo2.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/day16-20/src/day17/对象流/运用集合/ObjectOutputStreamDemo2.java" charset="GBK" />
+  </component>
+</project>

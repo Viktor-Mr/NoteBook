@@ -550,7 +550,7 @@ kafka-console-consumer.sh --bootstrap-server 47.106.86.64:9092 --from-beginning 
 
 ### 3.1.2**生产者重要参数列表**
 
-![image-20220902160217190](http://mk-images.tagao.top/img/image-20220902160217190.png?imageslim)
+<img src="http://mk-images.tagao.top/img/image-20220902160217190.png?imageslim" alt="image-20220902160217190" style="zoom:67%;" />
 
 
 
@@ -863,6 +863,12 @@ properties.put(ProducerConfig.COMPRESSION_TYPE_CONFIG, "snappy");
 
 
 
+
+
+
+
+
+
 ### 3.5.1消息累加器
 
 **消息累加器（RecordAccumulator）**
@@ -1029,6 +1035,8 @@ kafka只能保证`单分区下的消息顺序性`，为了保证消息的顺序�
 ![image-20220902184310223](http://mk-images.tagao.top/img/image-20220902184310223.png?imageslim)
 
 如果Request3在失败重试后才发往到集群中，必然会导致乱序，但是集群会重新按照序列号进行排序（最对一次排序5个）。
+
+
 
 
 
@@ -2084,7 +2092,33 @@ public interface ConsumerInterceptor<K, V> extends Configurable, AutoCloseable {
 
 
 
-# 第六章Kafka整合Spring Boot
+
+
+
+
+# 第六章优化
+
+
+
+生产者调优
+
+https://zhuanlan.zhihu.com/p/136705624
+
+
+
+
+
+错误日志
+
+https://stackoverflow.com/questions/56807188/how-to-fix-kafka-common-errors-timeoutexception-expiring-1-records-xxx-ms-has
+
+
+
+
+
+
+
+# 第七章Kafka整合Spring Boot
 
 
 

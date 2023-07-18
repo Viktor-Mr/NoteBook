@@ -196,7 +196,11 @@ jvm 02 -> synchronized 02
 
 # 8.进入/usr/redis目录启动redis服务 
 - ./redis-server
+
+读取配置文件  后台运行&
 ```
+
+![image-20230108144824671](http://mk-images.tagao.top/img/image-20230108144824671.png?imageslim)
 
 ![](http://mk-images.tagao.top/img/202204202018866.png?imageslim)
 

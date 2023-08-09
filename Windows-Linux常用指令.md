@@ -179,3 +179,9 @@ find / -name aaa
 
 
 
+```shell
+find  -iname "*SaleContractFromDc*"
+```
+
+
+

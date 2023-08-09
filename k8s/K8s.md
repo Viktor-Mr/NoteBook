@@ -286,7 +286,7 @@ $ ntpdate time.windows.com
 
 ```shell
 # 安装 yum-config-manager 相关依赖
-$ yum install -y yum-utils device-mapper-persistent-data lvm2
+    $ yum install -y yum-utils device-mapper-persistent-data lvm2
 # 添加 containerd yum 源
 $ yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 # 安装 containerd

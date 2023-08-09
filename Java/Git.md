@@ -1,3 +1,41 @@
+## 常用
+
+修改commit message
+
+```sh
+git commit --amend
+```
+
+
+
+合并多个commit
+
+1.查看log
+
+```shell
+ git log --oneline
+```
+
+![image-20230809113233910](http://mk-images.tagao.top/img/image-20230809113233910.png?imageslim)
+
+2. 指定合并某个commit前的commit
+
+```shell
+ git rebase -i 7488cce
+```
+
+![image-20230809113424010](http://mk-images.tagao.top/img/image-20230809113424010.png?imageslim)
+
+3. 将pick 1128437 docs:e 修改成 s 1128437 docs:e
+
+   接着保存退出
+
+
+
+
+
+## 基本
+
 #### 仓库拷贝
 
 Git 全局设置:

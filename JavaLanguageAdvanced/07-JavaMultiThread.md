@@ -21,20 +21,18 @@
 * **程序(program)**是为完成特定任务、用某种语言编写的一组指令的集合。<font color='red'>**即指一段静态的代码，静态对象。**</font>
 
 * **进程(process)**是程序的一次执行过程，或是正在运行的一个程序。是一个动态的过程：有它自身的产生、存在和消亡的过程。——生命周期
-
   * 如：运行中的QQ，运行中的MP3播放器
-
+  
   * 程序是静态的，进程是动态的
-
+  
   * <font color='red'>**进程作为资源分配的单位**</font>，系统在运行时会为每个进程分配不同的内存区域
-
+  
 * **线程(thread)**，进程可进一步细化为线程，是一个程序内部的一条执行路径。
-
   * 若一个进程同一时间**并行**执行多个线程，就是支持多线程的
-
+  
   * <font color='red'>**线程作为调度和执行的单位，每个线程拥有独立的运行栈和程序计数器(pc)，它被包含在进程之中，是进程中的实际运作单位。**</font>线程切换的开销小。
   * 线程(thread)是操作系统能够进行运算调度的<font color='red'>**最小单位**</font>。
-
+  
   * 一个进程中的**多个线程共享相同的内存单元/内存地址空间** ->它们从同一堆中分配对象，可以访问相同的变量和对象。这就使得线程间通信更简便、高效。但多个线程操作共享的系统资源可能就会带来<font color='red'>**安全的隐患。**</font>
   * 在Unix System V及SunOS中也被称为轻量进程（lightweight processes），但轻量进程更多指内核线程（kernel thread），而把用户线程（user thread）称为线程。
 
@@ -133,15 +131,9 @@ CPU其他参数
 
 
 
-<img src="http://mk-images.tagao.top/img/202203282337913.png?imageslim" style="zoom: 67%;" />
 
 
-
-
-
-
-
-
+![image-20240111163533437](http://mk-images.tagao.top/img/image-20240111163533437.png)
 
 # 2.线程的创建和使用
 
@@ -331,7 +323,7 @@ public class **Thread** extends Object implements Runnable
 
 ## 2.4Thread方法
 
-![](http://mk-images.tagao.top/img/202203290046895.png?imageslim)
+![](http://mk-images.tagao.top/img/202203290046895.png)
 
 
 
@@ -684,7 +676,7 @@ Java中的线程分为两类：一种是**守护线程**，一种是**用户线�
 
 <font color='red'>**实现Runnable接口**</font>
 
-![](http://mk-images.tagao.top/img/202203292208839.png?imageslim)
+![](http://mk-images.tagao.top/img/202203292208839.png)
 
 
 
